@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makwe's Family Day 2025</title>
+
+<!-- Comic font -->
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:'Comic Neue', cursive;
+  font-weight:400;
+  background:#0b0c10;
+  color:#f1f1f1;
+  overflow-x:hidden;
+  position:relative;
+  min-height:100vh;
+  text-align:center;
+}
+
+/* Background GIF fighter */
+.background-gif {
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: url('https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif') center/contain no-repeat;
+  opacity:0.05;
+  z-index:1;
+}
+
+/* Arcade lines */
+.background-lines {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0; left:0;
+  overflow:hidden;
+  z-index:0;
+}
+.line {
+  position:absolute;
+  width:2px;
+  height:100%;
+  background:linear-gradient(to bottom, rgba(0,255,255,0.2), transparent);
+  animation: moveLine 3s linear infinite;
+}
+@keyframes moveLine {0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
+
+/* Header */
+header {
+  padding:2rem;
+  background: rgba(30,30,30,0.85);
+  backdrop-filter: blur(6px);
+  border-bottom:2px solid #444;
+  z-index:10;
+  position:relative;
+}
+header h1 { font-size:2rem; margin:0; color:#00ffd5; font-weight:700; }
+
+/* Tentatif table */
+.tentatif {
+  margin:2rem auto;
+  padding:1rem;
+  max-width:900px;
+  background:rgba(20,20,20,0.85);
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  color:#f1f1f1;
+}
+.tentatif table { width:100%; border-collapse:collapse; }
+.tentatif th, .tentatif td { padding:0.8rem; border:1px solid #444; text-align:left; }
+.tentatif th { background:#222; color:#00ffd5; font-weight:700; }
+.tentatif tr:nth-child(even){ background:rgba(255,255,255,0.05); }
+
+/* Groups */
+section.groups-section {
+  margin:2rem auto;
+  max-width:1000px;
+  position:relative;
+  z-index:10;
+}
+.groups {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:1.5rem;
+  justify-items:center;
+  align-items:start;
+  margin-top:1rem;
+}
+.group {
+  padding:1.2rem;
+  border-radius:15px;
+  font-weight:400;
+  color:#f1f1f1;
+  background:rgba(20,20,20,0.85);
+  box-shadow:0 4px 15px rgba(0,255,255,0.2);
+  position:relative;
+  overflow:hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.group:hover {
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+.group h3 { font-size:1.2rem; color:#00ffd5; font-weight:700; }
+.group ul li { font-weight:bold; color:#f1f1f1; }
+
+/* Buttons */
+button {
+  margin:0.5rem;
+  padding:0.8rem 1.5rem;
+  border:none;
+  border-radius:8px;
+  font-size:1rem;
+  font-weight:bold;
+  cursor:pointer;
+  position:relative;
+  z-index:10;
+}
+.game-onz { background:#2a9d8f; color:#fff; }
+.red-flag { background:#e63946; color:#fff; }
+#searchButton { background:#00ffd5; color:#000; }
+#searchInput { border-radius:8px; border:none; padding:0.8rem 1rem; width:70%; max-width:300px; font-size:1rem; }
+
+/* Button animations */
+@keyframes blinkRed {0%,100%{background-color:#e63946;}50%{background-color:#ff4d6d;}}
+.red-flag.active { animation:blinkRed 0.6s ease 5; }
+@keyframes fireGlow {0%{box-shadow:0 0 5px #ff6b6b,0 0 10px #ff8c42;}50%{box-shadow:0 0 15px #ff0000,0 0 25px #ff6b6b;}100%{box-shadow:0 0 5px #ff6b6b,0 0 10px #ff8c42;}}
+.game-onz.active { animation:fireGlow 2s ease-in-out; background:linear-gradient(45deg,#ff6b6b,#ff8c42,#ffba08); color:#fff; }
+
+/* Emoji */
+.emoji { position:absolute; pointer-events:none; user-select:none; animation-timing-function:ease-out; font-size:20px; z-index:9999; }
+
+/* Responsive */
+@media(max-width:768px){
+  .groups{grid-template-columns:1fr; gap:1rem;}
+  header h1{font-size:1.5rem;}
+  .group h3{font-size:1rem;}
+  .group ul li{font-size:0.7rem;}
+  button{font-size:0.8rem;padding:0.6rem 1rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="background-gif"></div>
+<div class="background-lines" id="backgroundLines"></div>
+
+<header>
+<h1>Makwe's Family Day 2025</h1>
+</header>
+
+<section class="tentatif">
+<h2>📋 Tentatif Aktiviti</h2>
+<table>
+<tr><th>Tarikh / Masa</th><th>Aktiviti</th></tr>
+<tr><td>14 Sept (Selasa Pagi)</td><td>Zumba, Gerakan Rosak</td></tr>
+<tr><td>14 Sept (Selasa Petang – Dewasa)</td><td>Cham Cham Cham Pool Version, Pool Volley</td></tr>
+<tr><td>14 Sept (Selasa Petang – Kanak-kanak)</td><td>Pool Volley & Magic Water</td></tr>
+<tr><td>14 Sept (Selasa Malam)</td><td>BBQ Night, Penyampaian Hadiah, Cabutan Bertuah</td></tr>
+</table>
+</section>
+
+<section class="search-section">
+<h2>🔍 Cari Nama Fighter</h2>
+<input type="text" id="searchInput" placeholder="Taip nama...">
+<button id="searchButton">Search</button>
+<audio id="searchSound" src="powerup.mp3"></audio>
+</section>
+
+<section class="groups-section">
+<h2>🔥 Senarai Fighter</h2>
+<div class="groups">
+  <div class="group group1">
+    <h3>Fighter 1</h3>
+    <ul><li>Pakngah</li><li>Along Boy</li><li>Syafiq</li><li>Moksu</li><li>Fatima</li><li>Mokde</li><li>Topek</li><li>Qusai</li></ul>
+  </div>
+  <div class="group group2">
+    <h3>Fighter 2</h3>
+    <ul><li>Pokde</li><li>Amat (Erin)</li><li>Marsya</li><li>Luqman Hakim</li><li>Makcik</li><li>Ika Hisyam</li><li>Muiz</li><li>Zahir</li><li>Zharfan</li></ul>
+  </div>
+  <div class="group group3">
+    <h3>Fighter 3</h3>
+    <ul><li>Pakcik</li><li>Iwan</li><li>Ika Topek</li><li>Wardah</li><li>Kak Erin</li><li>Makngah</li><li>Hafiz</li><li>Pakndak</li><li>Areesa</li></ul>
+  </div>
+  <div class="group group4">
+    <h3>Fighter 4</h3>
+    <ul><li>Poksu</li><li>Hisyam</li><li>Dila</li><li>Makndak</li><li>Zack</li><li>Mokteh</li><li>Afham</li><li>Niza</li><li>Irfan</li></ul>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>🎮 Pilihan Anda</h2>
+<button id="gameOnzButton" class="game-onz">Game Onz</button>
+<button id="redFlagButton" class="red-flag">Red Flag</button>
+</section>
+
+<!-- Audio -->
+<audio id="countdownSound" src="countdown-321.mp3"></audio>
+<audio id="explosionSound" src="explosion.mp3"></audio>
+<audio id="sirenSound" src="siren.mp3"></audio>
+<audio id="gameOverSound" src="game-over.mp3"></audio>
+<audio id="bgMusic" src="arcade-bg.mp3" loop></audio>
+
+<script>
+// Background lines
+const background=document.getElementById('backgroundLines');
+for(let i=0;i<50;i++){
+  const line=document.createElement('div');
+  line.className='line';
+  line.style.left=Math.random()*100+'vw';
+  line.style.height=(50+Math.random()*200)+'px';
+  line.style.animationDuration=(2+Math.random()*3)+'s';
+  background.appendChild(line);
+}
+
+// Background music autoplay on first click anywhere
+const bgMusic=document.getElementById('bgMusic');
+document.body.addEventListener('click',()=>{ if(bgMusic.paused) bgMusic.play(); },{once:true});
+
+// Emoji spawn
+function spawnEmoji(symbol,direction,duration=4000,rate=30){
+  const interval=setInterval(()=>{
+    const emoji=document.createElement('div');
+    emoji.className='emoji';
+    emoji.textContent=symbol;
+    emoji.style.left=Math.random()*90+'vw';
+    emoji.style.top=direction==='up'?'100vh':'0vh';
+    emoji.style.fontSize=(25+Math.random()*25)+'px';
+    document.body.appendChild(emoji);
+    requestAnimationFrame(()=>{
+      emoji.style.transform=direction==='up'?'translateY(-120vh)':'translateY(120vh)';
+      emoji.style.opacity=0;
+    });
+    setTimeout(()=>emoji.remove(),duration);
+  },rate);
+  setTimeout(()=>clearInterval(interval),duration);
+}
+
+// Game Onz button
+document.getElementById("gameOnzButton").addEventListener("click",()=>{
+  bgMusic.pause();
+  const btn=document.getElementById("gameOnzButton");
+  const countdown=document.getElementById("countdownSound");
+  const explosion=document.getElementById("explosionSound");
+  btn.classList.add("active");
+  countdown.currentTime=0; countdown.play();
+  countdown.onended=()=>{ setTimeout(()=>{ explosion.currentTime=0; explosion.play(); bgMusic.play(); },500); }
+  setTimeout(()=>btn.classList.remove("active"),4000);
+  spawnEmoji('🔥','up',4000,20);
+});
+
+// Red Flag button
+document.getElementById("redFlagButton").addEventListener("click",()=>{
+  bgMusic.pause();
+  const btn=document.getElementById("redFlagButton");
+  const siren=document.getElementById("sirenSound");
+  const gameOver=document.getElementById("gameOverSound");
+  btn.classList.add("active");
+  siren.currentTime=0; siren.play();
+  siren.onended=()=>{ setTimeout(()=>{ gameOver.currentTime=0; gameOver.play(); bgMusic.play(); },500); }
+  setTimeout(()=>btn.classList.remove("active"),4000);
+  spawnEmoji('😢','down',4000,20);
+});
+
+// Search function
+const searchInput=document.getElementById('searchInput');
+const searchButton=document.getElementById('searchButton');
+const searchSound=document.getElementById('searchSound');
+const groups=document.querySelectorAll('.group');
+
+function zoomToGroup(group){
+  group.scrollIntoView({behavior:'smooth',block:'center'});
+  group.style.transition='transform 0.5s';
+  group.style.transform='scale(1.1)';
+  setTimeout(()=>{group.style.transform='scale(1)';},800);
+}
+
+searchButton.addEventListener('click',()=>{
+  bgMusic.pause();
+  const query=searchInput.value.toLowerCase().trim();
+  let found=false;
+  groups.forEach(group=>{
+    const items=Array.from(group.querySelectorAll('li'));
+    const matches=items.some(item=>item.textContent.toLowerCase().includes(query));
+    if(matches) { found=true; zoomToGroup(group); }
+    group.style.display = matches || query==="" ? 'block':'none';
+  });
+  if(found && query!=="") { searchSound.currentTime=0; searchSound.play(); bgMusic.play(); }
+});
+
+// Zoom to search result also on click anywhere
+document.body.addEventListener('click',()=>{
+  const query=searchInput.value.toLowerCase().trim();
+  if(query==="") return;
+  groups.forEach(group=>{
+    const items=Array.from(group.querySelectorAll('li'));
+    const matches=items.some(item=>item.textContent.toLowerCase().includes(query));
+    if(matches) zoomToGroup(group);
+  });
+});
+</script>
+</body>
+</html>
